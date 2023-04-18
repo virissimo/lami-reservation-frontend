@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6"><h2>Disciplinas</h2></div>
+    <div class="col-md-6 d-grid gap-2 d-md-flex justify-content-md-end">
+      <button class="btn btn-outline-primary me-md-2 btn-lg" type="button">
+        Nova Disciplina
+      </button>
+    </div>
+  </div>
+
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Descrição</th>
+        <th scope="col">Laboratório</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let discipline of disciplines">
+        <th scope="row">{{ discipline.id }}</th>
+        <td>{{ discipline.name }}</td>
+        <td>{{ discipline.description }}</td>
+        <td>{{ discipline.prioritaryLab.name }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

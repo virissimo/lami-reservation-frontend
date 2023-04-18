@@ -7,7 +7,6 @@
 #header {
   padding: 30px 0;
   height: 92px;
-  position: fixed;
   left: 0;
   top: 0;
   right: 0;
@@ -15,17 +14,19 @@
   z-index: 997;
   background-color: #fff;
   box-shadow: 5px 0px 15px #c3c3c3;
+  margin-bottom: 30px;
 }
 #header #logo h1 {
   font-size: 34px;
   margin: 0;
   padding: 0;
   line-height: 1;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   letter-spacing: 3px;
 }
-#header #logo h1 a, #header #logo h1 a:hover {
+#header #logo h1 a,
+#header #logo h1 a:hover {
   color: #000;
   padding-left: 10px;
   border-left: 4px solid #18d26e;
@@ -44,18 +45,21 @@
   position: relative;
   white-space: nowrap;
 }
-.nav-menu, .nav-menu * {
+.nav-menu,
+.nav-menu * {
   margin: 0;
   padding: 0;
   list-style: none;
 }
-.header-scrolled .nav-menu li:hover > a, .header-scrolled .nav-menu > .menu-active > a {
+.header-scrolled .nav-menu li:hover > a,
+.header-scrolled .nav-menu > .menu-active > a {
   color: #18d26e;
 }
 .header-scrolled .nav-menu a {
   color: black;
 }
-.nav-menu li:hover > a, .nav-menu > .menu-active > a {
+.nav-menu li:hover > a,
+.nav-menu > .menu-active > a {
   color: #18d26e;
 }
 .nav-menu a {
@@ -63,7 +67,7 @@
   text-decoration: none;
   display: inline-block;
   color: #000;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   font-size: 13px;
   text-transform: uppercase;
@@ -131,7 +135,7 @@ body.mobile-nav-active #mobile-nav {
   display: block;
   outline: none;
   font-weight: 700;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 #mobile-nav ul .menu-has-children i.fa-chevron-up {
   color: #18d26e;
@@ -151,16 +155,25 @@ body.mobile-nav-active #mobile-nav {
   padding-left: 30px;
 }
 
-.menu-has-children ul
-{display: none;}
-
-
-@media (max-width: 768px){
-#nav-menu-container {
+.menu-has-children ul {
   display: none;
 }
 
-#mobile-nav-toggle {
-  display: inline;
+@media (max-width: 768px) {
+  #nav-menu-container {
+    display: none;
+  }
+
+  #mobile-nav-toggle {
+    display: inline;
+  }
 }
+
+.nav-link {
+  color: black;
+  font-weight: 600;
+}
+
+.nav-link:hover {
+  border-bottom: #000 2px solid;
 }
