@@ -6,7 +6,7 @@ import { Discipline } from './discipline';
 @Injectable({ providedIn: 'root' })
 export class DisciplineService {
   //URL da API
-  private disciplineUrl = 'api/discipline';
+  private disciplineUrl = '/api/discipline';
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' }),

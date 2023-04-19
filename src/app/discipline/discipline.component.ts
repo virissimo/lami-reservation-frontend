@@ -17,6 +17,7 @@ export class DisciplineComponent implements OnInit {
   }
 
   getDisciplines(): void {
-    this.disciplineService.getDisciplines();
+    this.disciplineService.getDisciplines()
+    .subscribe(disciplines => this.disciplines = disciplines.slice(1, 5));
   }
 }
