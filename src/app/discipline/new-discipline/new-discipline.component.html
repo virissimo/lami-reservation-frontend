@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="row content-header">
+        <div class="col-md-6">
+            <h2>Nova Disciplina</h2>
+        </div>
+    </div>
+    <div class="row">
+        <form [formGroup]="addDiscipline" >
+            <div class="form-group col-md-6">
+                <label for="disciplineId" class="form-label">Nome</label>
+                <input id="disciplineName" name="disciplineName" type="text" class="form-control"
+                     required formControlName="name">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="" class="form-label">Descrição</label>
+                <textarea id="" name="" cols="40" rows="3" class="form-control" formControlName="description"></textarea>
+            </div>
+            <div class="form-group col-md-4">
+                <label for="" class="form-label">Laboratório Prioritário</label>
+                <div>
+                    <select id="" name="" class="form-select" formControlName="prioritaryLab">
+                        <option *ngFor="let lab of labs" [value]="lab">{{lab.name}}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <button (click)="goBack()" class="btn btn-outline-danger">Cancelar</button>
+                <button (click)="save()" type="submit" class="btn btn-outline-dark">Salvar</button>
+            </div>
+        </form>
+
+    </div>
+
+</div>

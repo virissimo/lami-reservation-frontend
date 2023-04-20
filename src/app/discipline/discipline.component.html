@@ -1,8 +1,10 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-6"><h2>Disciplinas</h2></div>
+    <div class="col-md-6">
+      <h2>Disciplinas</h2>
+    </div>
     <div class="col-md-6 d-grid gap-2 d-md-flex justify-content-md-end">
-      <button class="btn btn-outline-primary me-md-2 btn-lg" type="button">
+      <button class="btn btn-outline-dark me-md-2 btn-lg" type="button" routerLink="/new-discipline">
         Nova Disciplina
       </button>
     </div>
@@ -15,6 +17,7 @@
         <th scope="col">Nome</th>
         <th scope="col">Descrição</th>
         <th scope="col">Laboratório</th>
+        <th scope="col">Ações</th>
       </tr>
     </thead>
     <tbody>
@@ -23,6 +26,13 @@
         <td>{{ discipline.name }}</td>
         <td>{{ discipline.description }}</td>
         <td>{{ discipline.prioritaryLab.name }}</td>
+        <td><a href="#">
+            <i class="bi bi-pencil-square"></i>
+          </a>
+          <a (click)="delete(discipline)">
+            <i class="bi bi-trash3"></i>
+          </a>
+        </td>
       </tr>
     </tbody>
   </table>

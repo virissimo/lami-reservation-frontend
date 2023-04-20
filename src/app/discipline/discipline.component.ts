@@ -20,4 +20,9 @@ export class DisciplineComponent implements OnInit {
     this.disciplineService.getDisciplines()
     .subscribe(disciplines => this.disciplines = disciplines.slice(1, 5));
   }
+
+  delete(discipline: Discipline): void {
+    this.disciplineService.delete(discipline.id).subscribe();
+    this.getDisciplines();
+  }
 }

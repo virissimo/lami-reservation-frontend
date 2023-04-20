@@ -12,7 +12,7 @@ export class DisciplineService {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
   };
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   getDisciplines(): Observable<Discipline[]> {
     return this.http
@@ -20,12 +20,23 @@ export class DisciplineService {
       .pipe(catchError(this.handleError<Discipline[]>('getDisciplines', [])));
   }
 
+  addDiscipline(discipline: Discipline): Observable<Discipline> {
+    return this.http.post<Discipline>(this.disciplineUrl, discipline, this.httpOptions).pipe(
+      catchError(this.handleError<Discipline>('addDiscipline'))
+    );
+  }
+
+  delete(id: number): Observable<Discipline> {
+    const url = `${this.disciplineUrl}/${id}`;
+    return this.http.delete<Discipline>(url, this.httpOptions)
+      .pipe(
+        catchError(this.handleError<Discipline>('delete'))
+      );
+  }
+
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
-      // TODO: send the error to remote logging infrastructure
       console.error(error); // log to console instead
-
-      // Let the app keep running by returning an empty result.
       return of(result as T);
     };
   }
